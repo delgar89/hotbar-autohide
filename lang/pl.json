@@ -1,0 +1,36 @@
+{
+  "hotbar-autohide": {
+    "settings": {
+      "autoHide": {
+        "name": "Włącz funkcję autoukrywania hotbara"
+      },
+      "lip": {
+        "name": "Wysokość obszaru przywołania hotbara",
+        "hint": "Określa wysokość dolnego obszaru ekranu, po którego najechaniu kursorem schowany hotbar zostanie wysunięty."
+      },
+      "hideDelay": {
+        "name": "Opóźnienie ukrycia Hotbara (ms)",
+        "hint": "Ile milisekund Hotbar ma pozostać widoczny po zjechaniu z niego myszą, gdy nie jest przypięty. 2000 ms = 2 sekundy."
+      },
+      "hideMuteButton": {
+        "name": "Ukryj przycisk „Wycisz dźwięki”",
+        "hint": "Ukrywa przycisk wyciszania dźwięków w hotbarze."
+      },
+      "pinInMuteSlot": {
+        "name": "Umieść przycisk przypięcia hotbara w miejscu przycisku „Wycisz dźwięki”",
+        "hint": "Przenosi przycisk przypięcia hotbara w miejsce przycisku „Wycisz dźwięki”. Opcja działa tylko wtedy, gdy funkcja autoukrywania hotbara oraz ukrywanie przycisku „Wycisz dźwięki” są włączone."
+      },
+      "dockAtBottom": {
+        "name": "Hotbar przy dolnej krawędzi",
+        "hint": "Przenosi hotbar z domyślnej pozycji Foundry na sam dół ekranu. Przydatne, jeśli używasz modułu Camera Dock."
+      },
+      "pinned": {
+        "name": "Hotbar przypięty"
+      }
+    },
+    "pin": {
+      "pin": "Przypnij hotbar",
+      "unpin": "Odepnij hotbar"
+    }
+  }
+}

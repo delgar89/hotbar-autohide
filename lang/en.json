@@ -1,0 +1,36 @@
+{
+  "hotbar-autohide": {
+    "settings": {
+      "autoHide": {
+        "name": "Enable hotbar autohide function"
+      },
+      "lip": {
+        "name": "Hotbar reveal area height",
+        "hint": "Sets the height of the bottom screen area that reveals the hidden hotbar when hovered."
+      },
+      "hideDelay": {
+        "name": "Hotbar hide delay (ms)",
+        "hint": "How many milliseconds the hotbar should remain visible after the mouse leaves it when it is not pinned. 2000 ms = 2 seconds."
+      },
+      "hideMuteButton": {
+        "name": "Hide the “Mute Volume” button",
+        "hint": "Hides the “Mute Volume” button from the hotbar."
+      },
+      "pinInMuteSlot": {
+        "name": "Place the hotbar pin button in the “Mute Volume” button slot",
+        "hint": "Moves the hotbar pin button into the “Mute Volume” button slot. This option only works when hotbar autohide and hiding the “Mute Volume” button are both enabled."
+      },
+      "dockAtBottom": {
+        "name": "Hotbar at the bottom edge",
+        "hint": "Moves the hotbar from Foundry's default position to the very bottom of the screen. Useful if you use the Camera Dock module."
+      },
+      "pinned": {
+        "name": "Hotbar pinned"
+      }
+    },
+    "pin": {
+      "pin": "Pin hotbar",
+      "unpin": "Unpin hotbar"
+    }
+  }
+}

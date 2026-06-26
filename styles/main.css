@@ -1,0 +1,93 @@
+/* Domyślne centrowanie Foundry zostaje: nie dotykamy transform/left/position.
+   Nie ustawiamy transition na #hotbar, bo Foundry V14 ma własny delay/transition dla opacity UI.
+   Animację przesuwania margin-bottom robimy w JS przez Web Animations API, bez nadpisywania fade'u Foundry. */
+
+/* Stan schowany zawsze liczony jest od dolnej krawędzi okna.
+   Dzięki temu niewidoczny hitbox/lip ma tę samą pozycję niezależnie od tego,
+   czy rozwinięty hotbar wraca do domyślnej pozycji Foundry, czy jest przy samym dole. */
+#hotbar.autohide-collapsed {
+  --_hotbar-size: var(--hotbar-size, 52px);
+  --_lip: var(--hotbar-autohide-lip, 12px);
+  --_foundry-margin-bottom: var(--hotbar-autohide-foundry-margin-bottom, 0px);
+  margin-bottom: calc(var(--_hotbar-size) * -1 + var(--_lip));
+  position: relative;
+}
+
+/* Dopiero stan „zaparkowany” oznacza pełne ukrycie zawartości hotbara.
+   Ta klasa jest dodawana dopiero po hideDelay(), więc przez pierwsze 2s Foundry może robić swój normalny fade UI. */
+#hotbar.autohide-collapsed.autohide-parked > * {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Hitbox „wargi” — niewidoczny obszar najechania, który wyciąga hotbar z dołu. */
+#hotbar.autohide-collapsed::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: var(--_lip);
+  pointer-events: auto;
+  background: transparent;
+}
+
+/* Stan widoczny: hotbar wyjechał na miejsce.
+   Nie wymuszamy opacity: 1, bo tym ma zarządzać Foundry V14. */
+#hotbar.autohide-collapsed.autohide-visible,
+#hotbar.autohide-collapsed:focus-within {
+  margin-bottom: var(--_foundry-margin-bottom);
+}
+
+/* Widoczny tryb „przy dolnej krawędzi”. */
+#hotbar.autohide-bottom-edge.autohide-collapsed.autohide-visible,
+#hotbar.autohide-bottom-edge.autohide-collapsed:focus-within {
+  margin-bottom: 0;
+}
+
+/* Gdy przypięty – pozycja rozwinięta.
+   Opacity nadal pozostaje po stronie Foundry. */
+#hotbar.autohide-pinned {
+  margin-bottom: var(--hotbar-autohide-foundry-margin-bottom, 0px);
+}
+
+#hotbar.autohide-bottom-edge.autohide-pinned {
+  margin-bottom: 0;
+}
+
+/* Przycisk PIN (↑/↓) */
+#hotbar .bar-controls .hotbar-pin-toggle,
+#hotbar .hotbar-pin-toggle {
+  width: 28px; height: 28px; line-height: 1;
+  border-radius: 6px;
+  border: 1px solid var(--color-border-dark-3, rgba(0,0,0,.4));
+  background: var(--color-bg-dark-3, rgba(0,0,0,.5));
+  color: var(--color-text-light-highlight, #fff);
+  cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center;
+  margin-left: 6px; font-size: 16px;
+}
+#hotbar .bar-controls .hotbar-pin-toggle[aria-pressed="true"] { background: rgba(0,0,0,.7); }
+
+/* Kiedy PIN zastępuje Wycisz, nie dodajemy sztucznego odsunięcia na końcu kontrolek. */
+#hotbar .hotbar-pin-toggle.hotbar-pin-in-mute-slot { margin-left: 0; }
+
+/* V14: wyszarzenie zależnego ustawienia w SettingsConfig. */
+.hotbar-autohide-setting-disabled {
+  opacity: 0.48;
+  filter: grayscale(1);
+}
+
+.hotbar-autohide-setting-disabled label,
+.hotbar-autohide-setting-disabled .hint,
+.hotbar-autohide-setting-disabled .notes,
+.hotbar-autohide-setting-disabled p {
+  cursor: not-allowed;
+}
+
+.hotbar-autohide-setting-disabled input,
+.hotbar-autohide-setting-disabled button,
+.hotbar-autohide-setting-disabled select,
+.hotbar-autohide-setting-disabled textarea {
+  cursor: not-allowed !important;
+}
