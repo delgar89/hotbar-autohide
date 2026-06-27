@@ -1,10 +1,14 @@
 # Hotbar Autohide
 
-![Hotbar Autohide preview](docs/example_1.gif)
-
 Automatically hides the hotbar and reveals it when the mouse cursor hovers over the bottom screen area.
 The module is designed to free up more screen space by keeping the hotbar out of the way until it is needed. 
-This is especially useful when using modules such as Camera Dock, where hiding the hotbar allows the camera dock to sit lower on the screen.
+This is especially useful when using modules such as [Camera Dock](https://github.com/theripper93/camera-dock), where hiding the hotbar allows the camera dock to sit lower on the screen.
+
+## Preview
+
+![Hotbar Autohide preview](docs/example_1.gif)
+
+## With Camera Dock
 
 ![Hotbar Autohide settings](docs/example_2.gif)
 
