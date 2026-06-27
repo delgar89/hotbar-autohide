@@ -21,5 +21,4 @@ This is especially useful when using modules such as [Camera Dock](https://githu
 * Configure the delay before the hotbar hides.
 * Optionally hide the “Mute Volume” button.
 * Optionally place the hotbar pin button in the “Mute Volume” button slot.
-* Optionally move the expanded hotbar to the bottom edge of the screen.
-
+* Optionally dock the hotbar to the bottom edge of the screen.
