@@ -16,6 +16,9 @@
       "url": "https://github.com/delgar89"
     }
   ],
+  "url": "https://github.com/delgar89/hotbar-autohide",
+  "manifest": "https://github.com/delgar89/hotbar-autohide/releases/latest/download/module.json",
+  "download": "https://github.com/delgar89/hotbar-autohide/releases/latest/download/module.zip",
   "esmodules": [
     "scripts/main.js"
   ],
